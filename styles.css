@@ -870,3 +870,156 @@ nav a:hover, nav a.active {
   background-color: rgba(204, 0, 0, 0.1) !important;
   transform: translateX(5px);
 }
+
+/* =========================================
+   BASE GRID UTILITIES
+   ========================================= */
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.protocol-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
+  margin-bottom: 40px; 
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS & MEDIA QUERIES
+   ========================================= */
+
+@media (max-width: 900px) {
+  /* Navigation */
+  nav {
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  nav a {
+    margin: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Hero Sections */
+  .premium-hero {
+    padding: 80px 20px 60px;
+  }
+  
+  .premium-hero .hero-headline {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .premium-hero .hero-subheadline {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .premium-hero .hero-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .premium-hero .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* General Sections */
+  .section-headline {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* Grids and Containers */
+  .featured-programs, .testimonials, .blog-preview, .library-section, .featured-section, .guidance-section {
+    padding: 60px 20px;
+  }
+
+  .program-grid, .testimonial-grid, .blog-grid, .guidance-grid, 
+  .grid-2, .grid-3, .protocol-grid {
+    grid-template-columns: 1fr; /* Force single column on mobile */
+    gap: 20px;
+  }
+
+  /* Filter Bars */
+  .filter-bar {
+    padding: 12px 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  
+  .filter-container {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding-bottom: 5px; /* space for scrollbar */
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  /* Highlight Feature (Programs Page) */
+  .highlight-featured {
+    padding: 60px 20px;
+  }
+  
+  .highlight-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+  
+  .highlight-desc {
+    font-size: 1rem;
+  }
+  
+  .highlight-image-box {
+    aspect-ratio: 16/9; /* Better for mobile viewing */
+  }
+
+  /* Lead Magnet */
+  .lead-magnet {
+    padding: 80px 20px;
+  }
+  
+  .lead-magnet-container {
+    padding: 40px 20px;
+  }
+
+  /* Protocol Generator Form */
+  .featured-programs-container form label {
+    font-size: 1rem !important;
+  }
+  
+  .featured-programs-container form select {
+    padding: 12px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small screens adjustments */
+  .premium-hero .hero-headline {
+    font-size: 2.2rem;
+  }
+  
+  nav a {
+    font-size: 0.75rem;
+    margin: 5px 6px;
+  }
+  
+  .program-card {
+    padding: 25px 20px;
+  }
+  
+  .testimonial-quote-icon {
+    font-size: 3rem;
+  }
+  
+  .blog-image-placeholder {
+    height: 180px;
+  }
+}
